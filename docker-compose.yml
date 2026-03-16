@@ -1,0 +1,15 @@
+services:
+  image-caption-gpu:
+    build: .
+    container_name: image-caption-tf-dev
+    runtime: nvidia
+    ports:
+      - "8888:8888"
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - C:/:/c_drive
+      - .:/workspace
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
